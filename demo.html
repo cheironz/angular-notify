@@ -30,7 +30,9 @@
 	</div>
 	<script src="scripts/vendor/jquery.min.js"></script>
 	<script src="scripts/vendor/angular.min.js"></script>
+	<script src="scripts/angular-notify.min.js"></script>
 	<script type="text/javascript">
+		angular.module('demoApp', ['angularNotify']);
 		$(document).ready(function(){
 			$('.theme-change').click(function(e){
 				var theme = e.target.getAttribute('data-theme');
@@ -42,7 +44,9 @@
 					css.setAttribute('href','styles/css/angular-notify.min.css');
 				}
 			});
+			angular.bootstrap(document, ['demoApp']);
 		});
+
 	</script>
 </body>
 </html>
