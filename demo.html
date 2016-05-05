@@ -29,16 +29,19 @@
 		</div>
 	</div>
 	<script src="scripts/vendor/jquery.min.js"></script>
+	<script src="scripts/vendor/angular.min.js"></script>
 	<script type="text/javascript">
-		$('.theme-change').click(function(e){
-			var theme = e.target.getAttribute('data-theme');
-			console.log(theme);
-			var css = document.getElementById('notifyTheme');
-			if(theme == 'md'){
-				css.setAttribute('href','styles/css/angular-notify-material.min.css');
-			}else{
-				css.setAttribute('href','styles/css/angular-notify.min.css');
-			}
+		$(document).ready(function(){
+			$('.theme-change').click(function(e){
+				var theme = e.target.getAttribute('data-theme');
+				console.log(theme);
+				var css = document.getElementById('notifyTheme');
+				if(theme == 'md'){
+					css.setAttribute('href','styles/css/angular-notify-material.min.css');
+				}else{
+					css.setAttribute('href','styles/css/angular-notify.min.css');
+				}
+			});
 		});
 	</script>
 </body>
