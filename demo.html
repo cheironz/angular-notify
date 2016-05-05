@@ -6,33 +6,42 @@
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" href="styles/css/angular-notify.min.css" id="notifyTheme">
 	<style type="text/css">
-		.notifys{
+		.notifies{
 			position: absolute;
 			top: 0;
 			right: 0;
 		}
 	</style>
 </head>
-<body>
+<body ng-controller="DemoController">
 	<div class="demo">
 		<div class="theme-select">
 			<h4>切换主题为默认 / Material Design</h4>
 			<button data-theme="default" class="theme-change">默认</button>
 			<button data-theme="md" class="theme-change">Material Design</button>
 		</div>
-	</div>
-	<div class="notifys">
-		<div class="angular-notify angular-notify-error angular-notify-enter">
-			<p class="title">Login Failed!</p>
-			<p class="content">1503: Username or password error!</p>
-			<button class="close"><i class="material-icons">close</i></button>
+		<div class="event-trigger">
+			<button ng-click="eventTrigger($event)" data-type="error" data-title="Login Failed!" data-content="1503: Username or password error!">Error</button>
+			<button ng-click="eventTrigger($event)" data-type="error" data-title="Login Failed!">Error-Short</button>
+			<button ng-click="eventTrigger($event)" data-type="info" data-title="You have a new Message." data-content="Hello!">Info</button>
 		</div>
 	</div>
+	<div class="notifies" notifybar></div>
 	<script src="scripts/vendor/jquery.min.js"></script>
 	<script src="scripts/vendor/angular.min.js"></script>
 	<script src="scripts/angular-notify.min.js"></script>
 	<script type="text/javascript">
-		angular.module('demoApp', ['angularNotify']);
+		angular.module('demoApp', ['angularNotify']).controller('DemoController', ['$scope', function($scope){
+			$scope.eventTrigger = function(e){
+				var notify = {
+					type: e.target.getAttribute('data-type'),
+					title: e.target.getAttribute('data-title'),
+					content: e.target.getAttribute('data-content')
+				};
+				$scope.$emit('notify', notify);
+			};
+		}]);
+
 		$(document).ready(function(){
 			$('.theme-change').click(function(e){
 				var theme = e.target.getAttribute('data-theme');

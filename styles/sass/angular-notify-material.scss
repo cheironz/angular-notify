@@ -116,7 +116,7 @@ $content-size: 13px;
 
 .angular-notify-enter{
 	animation-name: 'angular-notify-enter';
-	animation-duration: 500ms;
+	animation-duration: 400ms;
 	animation-timing-function: ease-in-out-cubic;
 	animation-delay: 0;
 	animation-iteration-count: 1;
@@ -126,9 +126,9 @@ $content-size: 13px;
 
 .angular-notify-hide{
 	animation-name: 'angular-notify-hide';
-	animation-duration: 500ms;
+	animation-duration: 320ms;
 	animation-timing-function: linear;
-	animation-delay: 5000ms;
+	animation-delay: 0;
 	animation-iteration-count: 1;
 	animation-direction: normal;
 	animation-fill-mode: forwards;

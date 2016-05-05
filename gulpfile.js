@@ -32,7 +32,7 @@ gulp.task('style', function(){
 });
 
 gulp.task('js', function(){
-	return gulp.src('scripts/src/*.js')
+	return gulp.src('scripts/src/main.js')
 	.pipe(plumber({errorHandler: notify.onError('Error: <%= error.message %>')}))
 	.pipe(sourcemaps.init())
 	.pipe(jshint())
