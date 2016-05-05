@@ -72,7 +72,7 @@ AngularNotifyModule.directive('notifybar', [
 					return notify;
 				};
 				scope.$onRootScope('notify',function(e,notifyData){
-					if($.inArray(notifyData.type,['success','info','warning','error'])){
+					if($.inArray(notifyData.type, ['success', 'info', 'warning', 'error']) !== -1){
 						if( typeof notifyData.title == 'string' && notifyData.title.length !== 0){
 							var notify = createNotify(notifyData);
 							elem[0].appendChild(notify.domElem);

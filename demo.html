@@ -21,9 +21,14 @@
 			<button data-theme="md" class="theme-change">Material Design</button>
 		</div>
 		<div class="event-trigger">
-			<button ng-click="eventTrigger($event)" data-type="error" data-title="Login Failed!" data-content="1503: Username or password error!">Error</button>
-			<button ng-click="eventTrigger($event)" data-type="error" data-title="Login Failed!">Error-Short</button>
+			<button ng-click="eventTrigger($event)" data-type="success" data-title="Login Failed!" data-content="1503: Username or password error!">success</button>
+			<button ng-click="eventTrigger($event)" data-type="success" data-title="Login Failed!">success-Short</button>
 			<button ng-click="eventTrigger($event)" data-type="info" data-title="You have a new Message." data-content="Hello!">Info</button>
+			<button ng-click="eventTrigger($event)" data-type="info" data-title="You have a new Message.">Info</button>
+			<button ng-click="eventTrigger($event)" data-type="warning" data-title="You have a new Message." data-content="Hello!">Warning</button>
+			<button ng-click="eventTrigger($event)" data-type="warning" data-title="You have a new Message.">Warning</button>
+			<button ng-click="eventTrigger($event)" data-type="error" data-title="You have a new Message." data-content="Hello!">Error</button>
+			<button ng-click="eventTrigger($event)" data-type="error" data-title="You have a new Message.">Error</button>
 		</div>
 	</div>
 	<div class="notifies" notifybar></div>
