@@ -25,14 +25,16 @@ $content-size: 13px;
 		font-size: $title-size;
 		font-weight: 600;
 		letter-spacing: 0.02em;
-		margin: 0 0 0 64px;
+		line-height: 22px;
+		margin: 1px 0 0 64px;
 		padding: 0 0 0 16px;
 	}
 
 	.content{
 		font-size: $content-size;
 		letter-spacing: 0.02em;
-		margin: 10px 0 0 64px;
+		line-height: 20px;
+		margin: 5px 0 0 64px;
 		padding: 0 0 0 16px;
 	}
 

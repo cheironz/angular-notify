@@ -76,7 +76,12 @@ AngularNotifyModule.directive('notifybar', [
 						if( typeof notifyData.title == 'string' && notifyData.title.length !== 0){
 							var notify = createNotify(notifyData);
 							elem[0].appendChild(notify.domElem);
-							setTimeout(function(){notify.hideFunc();}, 3200);
+							var timeoutID = setTimeout(function(){notify.hideFunc();}, 3200);
+							$(notify.domElem).mouseenter(function(){
+								window.clearTimeout(timeoutID);
+							}).mouseleave(function(){
+								timeoutID = setTimeout(function(){notify.hideFunc();}, 3200);
+							});
 						}
 					}
 				});

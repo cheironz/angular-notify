@@ -32,17 +32,17 @@ gulp.task('style', function(){
 });
 
 gulp.task('js', function(){
-	return gulp.src('scripts/src/main.js')
+	return gulp.src('scripts/src/*.js')
 	.pipe(plumber({errorHandler: notify.onError('Error: <%= error.message %>')}))
 	.pipe(sourcemaps.init())
 	.pipe(jshint())
 	.pipe(jshint.reporter('default'))
 	.pipe(concat(combineJSName))
-	.pipe(gulp.dest('scripts'))
+	.pipe(gulp.dest('scripts/dist'))
 	.pipe(rename({ suffix: '.min'}))
 	.pipe(uglify())
 	.pipe(sourcemaps.write('./'))
-	.pipe(gulp.dest('scripts'))
+	.pipe(gulp.dest('scripts/dist'))
 });
 
 gulp.task('vendor', function(){
