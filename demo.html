@@ -1,40 +1,52 @@
 <!DOCTYPE html>
-<html lang="zh-Hans-cmn">
+<html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<title>Notify-Demo</title>
+	<link rel="stylesheet" href="demo.css">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<link rel="stylesheet" href="styles/css/angular-notify-material.min.css" id="notifyTheme">
-	<style type="text/css">
-		.notifies{
-			position: absolute;
-			top: 0;
-			right: 0;
-		}
-	</style>
+	<link rel="stylesheet" href="styles/css/angular-notify.min.css" id="notifyTheme">
 </head>
 <body ng-controller="DemoController">
 	<div class="demo">
-		<div class="theme-select">
-			<h4>切换主题为默认 / Material Design</h4>
-			<button data-theme="default" class="theme-change">默认</button>
-			<button data-theme="md" class="theme-change">Material Design</button>
-		</div>
+		<header>
+			<h1>Angular-Notify Demo Page</h1>
+			<div class="theme-select">
+				<button data-theme="default" class="theme-change active">Default Theme</button>
+				<button data-theme="md" class="theme-change">Material Design Theme</button>
+				<button data-theme="flat" class="theme-change">Flat Theme</button>
+				<button data-theme="bordered" class="theme-change">Bordered Theme</button>
+			</div>
+		</header>
 		<div class="event-trigger">
-			<button ng-click="eventTrigger($event)" data-type="success" data-title="Login Failed!" data-content="1503: Username or password error!">success</button>
-			<button ng-click="eventTrigger($event)" data-type="success" data-title="Login Failed!">success-Short</button>
-			<button ng-click="eventTrigger($event)" data-type="info" data-title="You have a new Message." data-content="Hello!">Info</button>
-			<button ng-click="eventTrigger($event)" data-type="info" data-title="You have a new Message.">Info</button>
-			<button ng-click="eventTrigger($event)" data-type="warning" data-title="You have a new Message." data-content="Hello!">Warning</button>
-			<button ng-click="eventTrigger($event)" data-type="warning" data-title="You have a new Message.">Warning</button>
-			<button ng-click="eventTrigger($event)" data-type="error" data-title="You have a new Message." data-content="Hello!">Error</button>
-			<button ng-click="eventTrigger($event)" data-type="error" data-title="You have a new Message.">Error</button>
+			<h4>Event Triggers:</h4>
+			<table>
+				<tr>
+					<td ng-click="eventTrigger($event)" data-type="success" data-title="Create Item Successful !" data-content="Item ( id: 2031 ) has already added to the list.">Success Notify</td>
+					<td ng-click="eventTrigger($event)" data-type="success" data-title="Create Item Successful !">Success Notify Without Content</td>
+				</tr>
+				<tr>
+					<td ng-click="eventTrigger($event)" data-type="info" data-title="You have a new Message." data-content="Did you send email about the sample project? -- By: Amy">Information Notify</td>
+					<td ng-click="eventTrigger($event)" data-type="info" data-title="You have a new Message.">Information Notify Without Content</td>
+				</tr>
+				<tr>
+					<td ng-click="eventTrigger($event)" data-type="warning" data-title="Some Data Lost！" data-content="We can not load some data.">Warning Notify</td>
+					<td ng-click="eventTrigger($event)" data-type="warning" data-title="Some Data Lost！">Warning Notify Without Content</td>
+				</tr>
+				<tr>
+					<td ng-click="eventTrigger($event)" data-type="error" data-title="Login Failed !" data-content="1503: Username or password error!">Error Notify</td>
+					<td ng-click="eventTrigger($event)" data-type="error" data-title="Login Failed !">Error Notify Without Content</td>
+				</tr>
+			</table>
 		</div>
 	</div>
+	<footer>
+		<p>Project Page &nbsp; <a href="https://github.com/cheiron1990/angular-notify">https://github.com/cheiron1990/angular-notify</a></p>
+	</footer>
 	<div class="notifies" notifybar></div>
 	<script src="scripts/vendor/jquery.min.js"></script>
 	<script src="scripts/vendor/angular.min.js"></script>
-	<script src="scripts/angular-notify.min.js"></script>
+	<script src="scripts/dist/angular-notify.min.js"></script>
 	<script type="text/javascript">
 		angular.module('demoApp', ['angularNotify']).controller('DemoController', ['$scope', function($scope){
 			$scope.eventTrigger = function(e){
@@ -52,10 +64,26 @@
 				var theme = e.target.getAttribute('data-theme');
 				console.log(theme);
 				var css = document.getElementById('notifyTheme');
-				if(theme == 'md'){
-					css.setAttribute('href','styles/css/angular-notify-material.min.css');
-				}else{
-					css.setAttribute('href','styles/css/angular-notify.min.css');
+				switch(theme){
+					case 'md':
+						css.setAttribute('href','styles/css/angular-notify-material.min.css');
+						$('.theme-select button').removeClass('active');
+						$(e.target).addClass('active');
+						break;
+					case 'flat':
+						css.setAttribute('href','styles/css/angular-notify-flat.min.css');
+						$('.theme-select button').removeClass('active');
+						$(e.target).addClass('active');
+						break;
+					case 'bordered':
+						css.setAttribute('href','styles/css/angular-notify-bordered.min.css');
+						$('.theme-select button').removeClass('active');
+						$(e.target).addClass('active');
+						break;
+					default:
+						css.setAttribute('href','styles/css/angular-notify-bordered.min.css');
+						$('.theme-select button').removeClass('active');
+						$(e.target).addClass('active');
 				}
 			});
 			angular.bootstrap(document, ['demoApp']);
