@@ -1,0 +1,141 @@
+// Color
+$success: #8BC34A;
+$info: #03A9F4;
+$warning: #FFC107;
+$error: #F44336;
+// Font
+$title-size: 18px;
+$content-size: 14px;
+
+.angular-notify{
+	font-family: 'Roboto', system, -apple-system, '.SFNSDisplay-Regular', HelveticaNeue, Arial, 'Noto Sans', 'Noto Sans CJK SC', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft Yahei', sans-serif;
+
+	background-color: #FFFFFF;
+	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.24), 0 0 4px rgba(0, 0, 0, 0.12);
+	width: 480px;
+	padding: 16px 16px 16px 0;
+	margin: 16px;
+	position: relative;
+	z-index: 999;
+
+	.title{
+		font-size: $title-size;
+		font-weight: 600;
+		letter-spacing: 0.02em;
+		line-height: 22px;
+		margin: 1px 0 0 64px;
+		padding: 0 0 0 16px;
+	}
+
+	.content{
+		font-size: $content-size;
+		font-weight: 300;
+		letter-spacing: 0.02em;
+		line-height: 20px;
+		margin: 5px 0 0 64px;
+		padding: 0 0 0 16px;
+	}
+
+	.close{
+		background: none;
+		border: none;
+		outline: none;
+		width: 24px;
+		height: 24px;
+		margin: 0;
+		position: absolute;
+		top: 16px;
+		right: 16px;
+		i{
+			color: #9B9B9B;
+		}
+		&:hover{
+			opacity: 0.6;
+		}
+	}
+
+	&:before{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 64px;
+		height: 100%;
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
+}
+
+.angular-notify-info{
+	color: $info;
+
+	&:before{
+		background-color: $info;
+		content: url('data:image/svg+xml,%3Csvg%20width%3D%2212px%22%20height%3D%2230px%22%20viewBox%3D%2226%2023%2012%2026%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3Cdefs%3E%3C%2Fdefs%3E%0A%20%20%20%20%3Cpath%20d%3D%22M34%2C47%20L34%2C32%20L32%2C32%20L28%2C32%20L28%2C36%20L30%2C36%20L30%2C47%20L26%2C47%20L26%2C51%20L38%2C51%20L38%2C47%20L34%2C47%20L34%2C47%20Z%20M30%2C25%20L34%2C25%20L34%2C29%20L30%2C29%20L30%2C25%20L30%2C25%20Z%22%20id%3D%22Combined-Shape%22%20stroke%3D%22none%22%20fill%3D%22%23FFFFFF%22%20fill-rule%3D%22evenodd%22%3E%3C%2Fpath%3E%0A%3C%2Fsvg%3E');
+	}
+}
+
+.angular-notify-success{
+	color: $success;
+
+	&:before{
+		background-color: $success;
+		content: url('data:image/svg+xml,%3Csvg%20width%3D%2237px%22%20height%3D%2230px%22%20viewBox%3D%2214%2022%2037%2026%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3Cdefs%3E%3C%2Fdefs%3E%0A%20%20%20%20%3Cpolygon%20id%3D%22Combined-Shape%22%20stroke%3D%22none%22%20fill%3D%22%23FFFFFF%22%20fill-rule%3D%22evenodd%22%20points%3D%2216.8284271%2034%2014%2036.8284271%2027.8284271%2050.4558441%2050.4558441%2027.8284271%2047.627417%2025%2027.7279221%2044.8994949%22%3E%3C%2Fpolygon%3E%0A%3C%2Fsvg%3E');
+	}
+}
+
+.angular-notify-warning{
+	color: $warning;
+
+	&:before{
+		background-color: $warning;
+		content: url('data:image/svg+xml,%3Csvg%20width%3D%224px%22%20height%3D%2230px%22%20viewBox%3D%2230%2023%204%2026%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3Cdefs%3E%3C%2Fdefs%3E%0A%20%20%20%20%3Cpath%20d%3D%22M34%2C25%20L30%2C25%20L30%2C44%20L34%2C44%20L34%2C25%20L34%2C25%20Z%20M30%2C47%20L34%2C47%20L34%2C51%20L30%2C51%20L30%2C47%20L30%2C47%20Z%22%20id%3D%22Combined-Shape%22%20stroke%3D%22none%22%20fill%3D%22%23FFFFFF%22%20fill-rule%3D%22evenodd%22%3E%3C%2Fpath%3E%0A%3C%2Fsvg%3E');
+	}
+}
+
+.angular-notify-error{
+	color: $error;
+
+	&:before{
+		background-color: $error;
+		content: url('data:image/svg+xml,%3Csvg%20width%3D%2226px%22%20height%3D%2230px%22%20viewBox%3D%2219%2023%2026%2026%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3Cdefs%3E%3C%2Fdefs%3E%0A%20%20%20%20%3Cpolygon%20id%3D%22Combined-Shape%22%20stroke%3D%22none%22%20fill%3D%22%23FFFFFF%22%20fill-rule%3D%22evenodd%22%20points%3D%2234.5563492%2037.7279221%2044.4558441%2027.8284271%2041.627417%2025%2031.7279221%2034.8994949%2021.8284271%2025%2019%2027.8284271%2028.8994949%2037.7279221%2019%2047.627417%2021.8284271%2050.4558441%2031.7279221%2040.5563492%2041.627417%2050.4558441%2044.4558441%2047.627417%22%3E%3C%2Fpolygon%3E%0A%3C%2Fsvg%3E');
+	}
+}
+
+@keyframes angular-notify-enter{
+	0%{
+		transform: translate(480px, 0);
+	}
+	100%{
+		transform: translate(0, 0);
+	}
+}
+
+@keyframes angular-notify-hide{
+	0%{
+		opacity: 1;
+	}
+	100%{
+		opacity: 0;
+	}
+}
+
+.angular-notify-enter{
+	animation-name: 'angular-notify-enter';
+	animation-duration: 400ms;
+	animation-timing-function: ease-in-out-cubic;
+	animation-delay: 0;
+	animation-iteration-count: 1;
+	animation-direction: normal;
+	animation-fill-mode: forwards;
+}
+
+.angular-notify-hide{
+	animation-name: 'angular-notify-hide';
+	animation-duration: 320ms;
+	animation-timing-function: linear;
+	animation-delay: 0;
+	animation-iteration-count: 1;
+	animation-direction: normal;
+	animation-fill-mode: forwards;
+}
