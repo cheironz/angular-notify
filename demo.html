@@ -12,7 +12,7 @@
 		<header>
 			<h1>Angular-Notify Demo Page</h1>
 			<div class="theme-select">
-				<button data-theme="default" class="theme-change active">Texture Theme</button>
+				<button data-theme="texture" class="theme-change active">Texture Theme</button>
 				<button data-theme="md" class="theme-change">Material Design Theme</button>
 				<button data-theme="flat" class="theme-change">Flat Theme</button>
 				<button data-theme="bordered" class="theme-change">Bordered Theme</button>
@@ -81,7 +81,7 @@
 						$(e.target).addClass('active');
 						break;
 					default:
-						css.setAttribute('href','styles/css/angular-notify-bordered.min.css');
+						css.setAttribute('href','styles/css/angular-notify-texture.min.css');
 						$('.theme-select button').removeClass('active');
 						$(e.target).addClass('active');
 				}
