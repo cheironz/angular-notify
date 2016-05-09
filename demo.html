@@ -5,14 +5,14 @@
 	<title>Notify-Demo</title>
 	<link rel="stylesheet" href="demo.css">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<link rel="stylesheet" href="styles/css/angular-notify.min.css" id="notifyTheme">
+	<link rel="stylesheet" href="styles/css/angular-notify-texture.min.css" id="notifyTheme">
 </head>
 <body ng-controller="DemoController">
 	<div class="demo">
 		<header>
 			<h1>Angular-Notify Demo Page</h1>
 			<div class="theme-select">
-				<button data-theme="default" class="theme-change active">Default Theme</button>
+				<button data-theme="default" class="theme-change active">Texture Theme</button>
 				<button data-theme="md" class="theme-change">Material Design Theme</button>
 				<button data-theme="flat" class="theme-change">Flat Theme</button>
 				<button data-theme="bordered" class="theme-change">Bordered Theme</button>
@@ -30,8 +30,8 @@
 					<td ng-click="eventTrigger($event)" data-type="info" data-title="You have a new Message.">Information Notify Without Content</td>
 				</tr>
 				<tr>
-					<td ng-click="eventTrigger($event)" data-type="warning" data-title="Some Data Lost！" data-content="We can not load some data.">Warning Notify</td>
-					<td ng-click="eventTrigger($event)" data-type="warning" data-title="Some Data Lost！">Warning Notify Without Content</td>
+					<td ng-click="eventTrigger($event)" data-type="warning" data-title="Help Information Not Loaded." data-content="The server respond a 500 error. Please contact the admin.">Warning Notify</td>
+					<td ng-click="eventTrigger($event)" data-type="warning" data-title="Help Information Not Loaded.">Warning Notify Without Content</td>
 				</tr>
 				<tr>
 					<td ng-click="eventTrigger($event)" data-type="error" data-title="Login Failed !" data-content="1503: Username or password error!">Error Notify</td>
