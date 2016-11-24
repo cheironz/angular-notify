@@ -4,7 +4,7 @@ demo: [http://cheiron1990.github.io/angular-notify/demo.html](http://cheiron1990
 
 #### 使用说明
 
-1 引入样式表，墙内自己解决一下Google字体 -_-||| ，第二个是根据不同的主题，可以是angular-notify-texture, angular-notify-material, angular-notify-flat, angular-notify-bordered: 
+1 引入样式表，墙内自己解决一下Google字体 -_-||| ，第二个是根据不同的主题，可以是angular-notify-texture, angular-notify-material, angular-notify-flat, angular-notify-bordered:
 ```html
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link rel="stylesheet" href="styles/css/angular-notify-texture.min.css" id="notifyTheme">
@@ -26,7 +26,8 @@ angular.module('yourApp', ['angularNotify']);
 var notify = {
     type: 'success',
     title: 'Create Item Successful!',
-    content: 'Item ( id: 2031 ) has already added to the list.'
+    content: 'Item ( id: 2031 ) has already added to the list.',
+    timeout: 3200 //timeout default is 3200 ms you can change as you need
 };
 $scope.$emit('notify', notify);
 ```
@@ -34,7 +35,7 @@ $scope.$emit('notify', notify);
 
 #### Guide
 
-1 Import stylesheets. The different theme files are angular-notify-texture, angular-notify-material, angular-notify-flat and angular-notify-bordered: 
+1 Import stylesheets. The different theme files are angular-notify-texture, angular-notify-material, angular-notify-flat and angular-notify-bordered:
 ```
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link rel="stylesheet" href="styles/css/angular-notify-texture.min.css" id="notifyTheme">
@@ -51,12 +52,13 @@ angular.module('yourApp', ['angularNotify']);
 ```html
 <div notifybar style="position:absolute;top:0;right:0"></div>
 ```
-5 When you want to display a notify, trigger a _notify_ event, and pass an object as argument, this object should contain a type parameter(the value must be one of: 'success', 'info', 'warning', 'error'), a title parameter and an optional content parameter:
+5 When you want to display a notify, trigger a _notify_ event, and pass an object as argument, this object should contain a type parameter(the value must be one of: 'success', 'info', 'warning', 'error'), a title parameter and an optional content and timeout parameter:
 ```javascript
 var notify = {
     type: 'success',
     title: 'Create Item Successful!',
-    content: 'Item ( id: 2031 ) has already added to the list.'
+    content: 'Item ( id: 2031 ) has already added to the list.',
+    timeout: 5000 //time in ms
 };
 $scope.$emit('notify', notify);
 ```

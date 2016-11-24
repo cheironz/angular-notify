@@ -75,12 +75,14 @@ AngularNotifyModule.directive('notifybar', [
 					if($.inArray(notifyData.type, ['success', 'info', 'warning', 'error']) !== -1){
 						if( typeof notifyData.title == 'string' && notifyData.title.length !== 0){
 							var notify = createNotify(notifyData);
+							var timeout = notifyData.timeout || 3200;
 							elem[0].appendChild(notify.domElem);
-							var timeoutID = setTimeout(function(){notify.hideFunc();}, 3200);
+
+							var timeoutID = setTimeout(function(){notify.hideFunc();}, timeout);
 							$(notify.domElem).mouseenter(function(){
 								window.clearTimeout(timeoutID);
 							}).mouseleave(function(){
-								timeoutID = setTimeout(function(){notify.hideFunc();}, 3200);
+								timeoutID = setTimeout(function(){notify.hideFunc();}, timeout);
 							});
 						}
 					}

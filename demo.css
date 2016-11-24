@@ -2,12 +2,14 @@
 	font-family: system, -apple-system, '.SFNSDisplay-Regular', HelveticaNeue, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft Yahei', sans-serif;
 	margin: 0;
 	padding: 0;
+	box-sizing: border-box;
 }
 body{
-	
+	overflow-x:  hidden;
 }
 .demo{
-	width: 640px;
+	width: 100%;
+	max-width: 640px;
 	margin: 24px auto;
 }
 header{
@@ -23,11 +25,13 @@ header h1{
 	color: #FFF;
 	font-size: 36px;
 	font-weight: normal;
-	width: 640px;
-	margin: 55px auto 36px auto; 
+	max-width: 640px;
+	width: 100%;
+	margin: 55px auto 36px auto;
 }
 .theme-select{
-	width: 640px;
+	max-width: 640px;
+	width: 100%;
 	margin: 0 auto;
 }
 .theme-select button{
@@ -74,7 +78,7 @@ header h1{
 	background-color: #4A90E2;
 }
 .notifies{
-	position: absolute;
+	position: fixed;
 	top: 0;
 	right: 0;
 }
@@ -86,7 +90,8 @@ footer{
 footer p{
 	color: #333;
 	font-size: 16px;
-	width: 640px;
+	max-width: 640px;
+	width: 100%;
 	margin: 18px auto;
 }
 footer p a{
